@@ -9,7 +9,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import locale
 
-locale.setlocale(locale.LC_TIME, 'ru_RU')
+locale.setlocale(locale.LC_TIME, '')
+
 
 def generate_report_html(data):
     messages = data['messages']
