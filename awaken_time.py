@@ -30,13 +30,13 @@ def generate_report_html(data):
             continue
 
         date_str = msg['date']
-try:
-    dt = datetime.fromisoformat(date_str)
-except ValueError:
-    try:
-        dt = datetime.fromtimestamp(float(date_str))
-    except Exception:
-        continue
+        try:
+            dt = datetime.fromisoformat(date_str)
+        except ValueError:
+            try:
+                dt = datetime.fromtimestamp(float(date_str))
+            except Exception:
+                continue
 
 
 
