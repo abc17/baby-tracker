@@ -29,7 +29,8 @@ def generate_report_html(data):
         if not text:
             continue
 
-        dt = datetime.fromtimestamp(msg['date'])
+        dt = datetime.fromtimestamp(int(msg['date']))
+
 
         sleep_match = sleep_pattern.search(text)
         if sleep_match:
