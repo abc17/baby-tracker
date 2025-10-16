@@ -10,8 +10,15 @@ TOKEN = os.getenv("TELEGRAM_TOKEN")
 import numpy as np
 import locale
 
-
 import boto3
+import io, base64
+
+buf = io.BytesIO()
+plt.savefig(buf, format="png")
+plt.close()
+buf.seek(0)
+img_b64 = base64.b64encode(buf.read()).decode("utf-8")
+html += f'<img src="data:image/png;base64,{img_b64}">'
 
 
 
