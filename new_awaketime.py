@@ -218,6 +218,7 @@ ax.set_xticklabels([f'{h}' for h in range(0, 24)])
 plt.title('Сон, питание и события')
 plt.tight_layout()
 fig1.savefig("events_timeline.png", dpi=150)
+plt.close()
 
 # === 7. Второй график (суммарные значения) ===
 if not sleep_df.empty:
@@ -251,6 +252,7 @@ fig2.autofmt_xdate()
 plt.title('Суммарная смесь и сон по дням')
 fig2.tight_layout()
 fig2.savefig("daily_summary.png", dpi=150)
+plt.close()
 
 
 # === 8. Новая логика: классификация дневного/ночного сна и расчёт времени бодрствования ===
@@ -408,6 +410,8 @@ if not stats_df.empty:
     plt.title('Дневной сон / Ночной сон / Бодрствование')
     plt.tight_layout()
     fig3.savefig("day_night_awake.png", dpi=150)
+    plt.close()
+
 else:
     print("Нет данных для построения третьего графика (stats_df пустой).")
 
